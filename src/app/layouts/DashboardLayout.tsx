@@ -52,9 +52,8 @@ const professionalNavItems: DashboardNavItem[] = [
 
 // Navigation items for Reclutador users
 const recruiterNavItems: DashboardNavItem[] = [
-  { path: '/dashboard', icon: LayoutDashboard, label: 'Panel Principal' },
-  { path: '/dashboard/talent-search', icon: Search, label: 'Busqueda de Talento' },
-  { path: '/dashboard/vacancies', icon: FileText, label: 'Mis Vacantes' },
+  { path: '/recruiter/dashboard', icon: LayoutDashboard, label: 'Panel Principal' },
+  { path: '/recruiter/talent-discovery', icon: Search, label: 'Busqueda de Talento' },
   { path: '/dashboard/preferences', icon: Settings, labelKey: 'nav.preferences' },
 ];
 

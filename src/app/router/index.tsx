@@ -27,6 +27,8 @@ const PublicPortfolioPage = lazy(() => import('@/pages/public/PublicPortfolioPag
 const PasswordPortfolioPage = lazy(() => import('@/pages/public/PasswordPortfolioPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 const AccessDeniedPage = lazy(() => import('@/pages/AccessDeniedPage'));
+const RecruiterDashboardPage = lazy(() => import('@/pages/recruiter/RecruiterDashboardPage'));
+const TalentDiscoveryPage = lazy(() => import('@/pages/recruiter/TalentDiscoveryPage'));
 
 function PageLoader() {
   return (
@@ -135,6 +137,22 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageLoader />}>
             <PreferencesPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'recruiter/dashboard',
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <RecruiterDashboardPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'recruiter/talent-discovery',
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <TalentDiscoveryPage />
           </Suspense>
         ),
       },

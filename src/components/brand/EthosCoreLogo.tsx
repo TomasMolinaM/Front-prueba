@@ -2,12 +2,14 @@ import { motion } from 'framer-motion';
 import { cn } from '@/shared/lib/utils';
 
 type LogoSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+type LogoVariant = 'default' | 'lilac';
 
 interface EthosCoreLogoProps {
   size?: LogoSize;
   showText?: boolean;
   className?: string;
   animate?: boolean;
+  variant?: LogoVariant;
 }
 
 const sizeConfig: Record<LogoSize, { icon: number; text: string; gap: string }> = {
@@ -31,9 +33,11 @@ export function EthosCoreLogo({
   size = 'md', 
   showText = true, 
   className,
-  animate = true 
+  animate = true,
+  variant = 'default'
 }: EthosCoreLogoProps) {
   const config = sizeConfig[size];
+  const isLilac = variant === 'lilac';
   
   const LogoIcon = (
     <svg
@@ -128,8 +132,8 @@ export function EthosCoreLogo({
       {/* Text - Ethos (Bold) + Hub (Light in Lilac) */}
       {showText && (
         <span className={cn('font-sora tracking-tight', config.text)}>
-          <span className="font-bold text-foreground">Ethos</span>
-          <span className="font-light text-violet-500">Hub</span>
+          <span className={cn('font-bold', isLilac ? 'text-white' : 'text-foreground')}>Ethos</span>
+          <span className={cn('font-light', isLilac ? 'text-violet-400' : 'text-violet-500')}>Hub</span>
         </span>
       )}
     </div>
