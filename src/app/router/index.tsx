@@ -18,6 +18,8 @@ const ExperiencePage = lazy(() => import('@/pages/dashboard/ExperiencePage'));
 const EducationPage = lazy(() => import('@/pages/dashboard/EducationPage'));
 const PreferencesPage = lazy(() => import('@/pages/dashboard/PreferencesPage'));
 const AdminDashboardPage = lazy(() => import('@/pages/admin/AdminDashboardPage'));
+const AdminUsersPage = lazy(() => import('@/pages/admin/AdminUsersPage'));
+const AdminModerationPage = lazy(() => import('@/pages/admin/AdminModerationPage'));
 const AdminSkillsPage = lazy(() => import('@/pages/admin/AdminSkillsPage'));
 const AdminPortfoliosPage = lazy(() => import('@/pages/admin/AdminPortfoliosPage'));
 const ExplorePage = lazy(() => import('@/pages/public/ExplorePage'));
@@ -150,6 +152,22 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageLoader />}>
             <AdminDashboardPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'admin/users',
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <AdminUsersPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'admin/moderation',
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <AdminModerationPage />
           </Suspense>
         ),
       },
